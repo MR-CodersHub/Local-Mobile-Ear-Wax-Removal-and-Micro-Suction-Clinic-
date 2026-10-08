@@ -57,6 +57,7 @@ const AURIS_ICONS = {
   send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-7 18-3.5-7.5L3 10l18-7z"/></svg>',
   lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>',
   ban: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m6 6 12 12"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
 };
 
 function aurisIcon(name) {
@@ -156,19 +157,44 @@ const Nav = {
     const burger = document.querySelector('.nav-burger');
     const menu = document.querySelector('.mobile-menu');
     if (burger && menu) {
-      burger.addEventListener('click', () => {
+      const openMenu = () => {
         menu.classList.add('open');
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('mobile-menu-open');
+        burger.setAttribute('aria-expanded', 'true');
+      };
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+        document.body.classList.remove('mobile-menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+      };
+
+      burger.addEventListener('click', e => {
+        e.stopPropagation();
+        if (menu.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
+
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        menu.classList.remove('open');
-        document.body.style.overflow = '';
+        closeMenu();
       }));
-      const close = menu.querySelector('.mobile-menu-close');
-      if (close) close.addEventListener('click', () => {
-        menu.classList.remove('open');
-        document.body.style.overflow = '';
+
+      menu.querySelectorAll('.mobile-menu-close').forEach(close => {
+        close.addEventListener('click', e => {
+          e.stopPropagation();
+          closeMenu();
+        });
       });
+
+      /* Auto-close the mobile menu when resizing up to desktop (burger breakpoint: 1080px) */
+      const desktopMq = window.matchMedia('(min-width: 1081px)');
+      const closeOnDesktop = () => { if (desktopMq.matches) closeMenu(); };
+      if (typeof desktopMq.addEventListener === 'function') desktopMq.addEventListener('change', closeOnDesktop);
+      else if (typeof desktopMq.addListener === 'function') desktopMq.addListener(closeOnDesktop);
     }
 
     document.querySelectorAll('[data-theme-toggle]').forEach(b => b.addEventListener('click', () => Theme.toggle()));
@@ -212,12 +238,18 @@ const Nav = {
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         document.querySelectorAll('.nav-profile.open, .nav-dropdown.open').forEach(el => el.classList.remove('open'));
+        if (menu && menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          document.body.style.overflow = '';
+          document.body.classList.remove('mobile-menu-open');
+          if (burger) burger.setAttribute('aria-expanded', 'false');
+        }
       }
     });
   },
   markActive() {
     const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a, .nav-drop-menu a').forEach(a => {
+    document.querySelectorAll('.nav-links a, .nav-drop-menu a, .mobile-menu > a:not(.btn)').forEach(a => {
       const href = a.getAttribute('href');
       if (href === path) a.classList.add('active');
     });
