@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Auris Care | Ear Wax Removal, Micro-Suction & Hearing Checks</title>
+  <meta name="description" content="Explore Auris Care's full range of ear health services: micro-suction, irrigation, hearing checks, tinnitus assessment and mobile home visits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%233FA7A3'/%3E%3Cpath d='M8 12a4 4 0 1 1 8 0c0 2-1 3-2 4s-1.5 2-1.5 3.5a1.5 1.5 0 0 1-3 0' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Auris Care home">
+        <span class="nav-logo-mark" data-icon="ear"></span>
+        <span class="nav-logo-text">Auris Care<small>Ear Health Clinic</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="home-2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <div class="nav-dropdown">
+          <a href="hearing-checks.html" class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Hearing Checks<span class="nav-caret" aria-hidden="true"></span></a>
+          <div class="nav-drop-menu" role="menu">
+            <a href="treatment-process.html" role="menuitem">Treatment Process</a>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="nav-dir-btn" data-dir-toggle aria-label="Toggle direction" title="RTL">RTL</button>
+        <div class="nav-profile">
+          <button class="nav-icon-btn nav-profile-btn" data-profile-toggle aria-label="Account" aria-haspopup="true" aria-expanded="false"><span data-icon="user"></span></button>
+          <div class="nav-profile-menu" role="menu">
+            <a href="login.html" role="menuitem">Login/Signup</a>
+            <a href="patient-dashboard.html" role="menuitem">Parent Dashboard</a>
+            <a href="admin-dashboard.html" role="menuitem">Admin Dashboard</a>
+          </div>
+        </div>
+        <a href="contact.html#book" class="btn btn--primary btn--sm nav-cta">Book Visit</a>
+        <button class="nav-burger" data-icon="menu" aria-label="Open menu"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="home-2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="hearing-checks.html">Hearing Checks</a>
+    <a href="treatment-process.html" class="mobile-sub">Treatment Process</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-divider" aria-hidden="true"></div>
+    <a href="login.html">Login/Signup</a>
+    <a href="patient-dashboard.html">Parent Dashboard</a>
+    <a href="admin-dashboard.html">Admin Dashboard</a>
+    <a href="contact.html#book" class="btn btn--primary">Book an Appointment</a>
+  </div>
+
+  <main id="main">
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80" alt="" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <span class="badge badge--white"><span data-icon="ear"></span>Our Services</span>
+        <h1>Every ear, <em style="color:var(--teal-soft);font-style:normal;">every concern</em>, expertly treated</h1>
+        <p>Six specialist services delivered by registered clinicians — at our clinic or in the comfort of your home.</p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICE FILTER + GRID ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">What We Treat</span>
+          <h2 class="section-title">Find the right <em style="color:var(--teal);font-style:normal;">treatment for you</em></h2>
+          <p class="section-sub">Filter by concern to narrow it down — every treatment is delivered by a registered clinician, in clinic or at home.</p>
+        </div>
+        <div class="filter-bar filter-bar--center reveal" data-filter-group="#servicesGrid">
+          <button class="filter-pill active" data-filter="all">All Services</button>
+          <button class="filter-pill" data-filter="removal">Wax Removal</button>
+          <button class="filter-pill" data-filter="hearing">Hearing</button>
+          <button class="filter-pill" data-filter="assessment">Assessment</button>
+          <button class="filter-pill" data-filter="mobile">Mobile</button>
+        </div>
+        <div class="grid grid-3" id="servicesGrid">
+          <article class="card service-card reveal" data-category="removal">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Precision micro-suction ear wax removal" loading="lazy">
+              <span class="service-icon" data-icon="ear"></span>
+            </div>
+            <div class="service-body">
+              <h3>Micro-Suction Ear Wax Removal</h3>
+              <p>The gold-standard, water-free method. Gentle medical-grade suction under direct microscopic vision — safe for perforated eardrums, grommets and sensitive ears.</p>
+              <span class="service-price">From <b>£65</b> · 30 min</span>
+              <a href="service-details.html?service=micro-suction" class="service-link">Full details <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+          <article class="card service-card reveal" data-category="removal">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80" alt="Gentle ear irrigation treatment" loading="lazy">
+              <span class="service-icon" data-icon="drop"></span>
+            </div>
+            <div class="service-body">
+              <h3>Ear Irrigation</h3>
+              <p>A controlled warm-water flush for softer wax build-ups, guided by camera inspection before and after. Comfortable, thorough and verified clear.</p>
+              <span class="service-price">From <b>£55</b> · 30 min</span>
+              <a href="service-details.html?service=irrigation" class="service-link">Full details <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+          <article class="card service-card reveal" data-category="hearing">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80" alt="Hearing health check with a specialist" loading="lazy">
+              <span class="service-icon" data-icon="sound"></span>
+            </div>
+            <div class="service-body">
+              <h3>Hearing Health Check</h3>
+              <p>Full audiometric screening in a sound-treated booth with same-day results, a personalised hearing report and honest, pressure-free advice.</p>
+              <span class="service-price">From <b>£45</b> · 45 min</span>
+              <a href="hearing-checks.html" class="service-link">Full details <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+          <article class="card service-card reveal" data-category="mobile">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Mobile home visit ear care" loading="lazy">
+              <span class="service-icon" data-icon="home"></span>
+            </div>
+            <div class="service-body">
+              <h3>Mobile Home Visit</h3>
+              <p>The complete clinic experience at your address. Identical equipment, identical sterility, identical specialists — plus zero travel stress.</p>
+              <span class="service-price">From <b>£95</b> · 45 min</span>
+              <a href="contact.html#book" class="service-link">Book a visit <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+          <article class="card service-card reveal" data-category="assessment">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80" alt="Tinnitus assessment with a specialist" loading="lazy">
+              <span class="service-icon" data-icon="wave"></span>
+            </div>
+            <div class="service-body">
+              <h3>Tinnitus Assessment</h3>
+              <p>Specialist evaluation of ringing, buzzing or hissing — identifying triggers, ruling out causes and building a personalised management plan.</p>
+              <span class="service-price">From <b>£75</b> · 60 min</span>
+              <a href="service-details.html?service=tinnitus" class="service-link">Full details <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+          <article class="card service-card reveal" data-category="assessment">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="Complete ear health MOT check-up" loading="lazy">
+              <span class="service-icon" data-icon="shield"></span>
+            </div>
+            <div class="service-body">
+              <h3>Complete Ear Health MOT</h3>
+              <p>Wax removal, hearing screen, otoscopy and a written aftercare plan — the comprehensive annual check-up for your ears.</p>
+              <span class="service-price">From <b>£110</b> · 60 min</span>
+              <a href="pricing.html" class="service-link">See packages <span data-icon="arrow"></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="filter-empty" hidden>
+          <span class="filter-empty-ic" data-icon="info"></span>
+          <h3>No services found</h3>
+          <p>Nothing matches this concern right now — try another filter or browse everything.</p>
+          <button type="button" class="btn btn--outline btn--sm" data-filter-reset>Show all services</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MICRO-SUCTION SPOTLIGHT ============ -->
+    <section class="section section--soft">
+      <div class="container split">
+        <div class="split-media reveal reveal--left">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="Micro-suction equipment in use">
+          <div class="split-badge"><span data-icon="ear" style="width:26px;height:26px;color:var(--teal);display:inline-flex"></span><div><b>Gold Standard</b><span>BSA recommended</span></div></div>
+        </div>
+        <div class="split-content reveal reveal--right">
+          <span class="eyebrow">Our Signature Treatment</span>
+          <h2>Why micro-suction is the <em style="color:var(--teal);font-style:normal;">safest</em> way to clear wax</h2>
+          <p class="lead">Unlike old-fashioned syringing, micro-suction never introduces water into the ear. A fine, sterile tip and medical-grade suction work under direct microscopic vision — meaning we see exactly what we are doing, at all times.</p>
+          <ul class="check-list">
+            <li><span data-icon="check"></span> No water — safe with perforated eardrums, grommets and ear infections</li>
+            <li><span data-icon="check"></span> Microscopic vision for millimetre precision</li>
+            <li><span data-icon="check"></span> Single-use sterile tips for every client</li>
+            <li><span data-icon="check"></span> Instant results — most clients hear the difference immediately</li>
+          </ul>
+          <a href="service-details.html?service=micro-suction" class="btn btn--navy">Explore Micro-Suction <span class="btn-arrow" data-icon="arrow"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S INCLUDED ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Every Appointment Includes</span>
+          <h2 class="section-title">The same <em style="color:var(--teal);font-style:normal;">premium standard</em>, every time</h2>
+          <p class="section-sub">Whatever service you choose, these are the non-negotiables that come with it.</p>
+        </div>
+        <div class="included-grid stagger">
+          <div class="included-item"><span data-icon="check"></span><div><b>Full consultation &amp; history</b><span>Medications, previous procedures, lifestyle factors</span></div></div>
+          <div class="included-item"><span data-icon="check"></span><div><b>Otoscopic camera examination</b><span>See inside your ear on screen before and after</span></div></div>
+          <div class="included-item"><span data-icon="check"></span><div><b>Sterile single-use equipment</b><span>Fresh tips and instruments for every client</span></div></div>
+          <div class="included-item"><span data-icon="check"></span><div><b>Written aftercare guidance</b><span>Take-home instructions and prevention tips</span></div></div>
+          <div class="included-item"><span data-icon="check"></span><div><b>Same-day results &amp; report</b><span>Hearing results explained in plain English</span></div></div>
+          <div class="included-item"><span data-icon="check"></span><div><b>Direct specialist access</b><span>Questions after your visit? Message us anytime</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREPARATION & AFTERCARE ============ -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Before &amp; After</span>
+          <h2 class="section-title">Preparation and <em style="color:var(--teal);font-style:normal;">aftercare</em></h2>
+        </div>
+        <div class="grid grid-2 stagger">
+          <article class="card">
+            <span class="icon-chip icon-chip--ice" data-icon="calendar"></span>
+            <h3 style="margin:16px 0 14px;">Before your appointment</h3>
+            <ul class="check-list" style="margin-bottom:0;">
+              <li><span data-icon="check"></span> Use olive oil ear drops for 3–5 days beforehand if advised (softens wax for easier removal)</li>
+              <li><span data-icon="check"></span> Avoid cotton buds, ear candles and inserting anything into the ear</li>
+              <li><span data-icon="check"></span> Tell us about any ear surgery, perforations, infections or hearing aids</li>
+              <li><span data-icon="check"></span> Eat normally and stay hydrated — no fasting required</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="icon-chip icon-chip--sand" data-icon="heart"></span>
+            <h3 style="margin:16px 0 14px;">After your treatment</h3>
+            <ul class="check-list" style="margin-bottom:0;">
+              <li><span data-icon="check"></span> Keep ears dry for 48 hours — no swimming or submerging</li>
+              <li><span data-icon="check"></span> Avoid cotton buds; let the ear clean itself naturally</li>
+              <li><span data-icon="check"></span> Mild popping or slight sensitivity for a day is normal</li>
+              <li><span data-icon="check"></span> Contact us immediately for pain, discharge or sudden hearing change</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SAFETY ============ -->
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Safety First</span>
+          <h2 class="section-title">Your questions, <em style="color:var(--teal);font-style:normal;">answered honestly</em></h2>
+        </div>
+        <div class="accordion reveal" data-single="false">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Is micro-suction safe for children?<span class="acc-icon" data-icon="plus"></span></button>
+            <div class="acc-body"><div class="acc-body-inner">Yes — with parental consent and a specialist experienced in paediatric ear care. We recommend micro-suction for children over 5, as it is water-free and does not require the child to stay perfectly still for long.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Can you treat a perforated eardrum?<span class="acc-icon" data-icon="plus"></span></button>
+            <div class="acc-body"><div class="acc-body-inner">Micro-suction is the preferred method with a perforation because it uses no water. We will always examine first and proceed only when it is clinically safe — otherwise we refer appropriately.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">What if my ears are too sensitive?<span class="acc-icon" data-icon="plus"></span></button>
+            <div class="acc-body"><div class="acc-body-inner">Tell us when booking. We can use a topical numbing spray, take extra time, and pause whenever you need. Many anxious clients tell us their fear disappeared within the first two minutes.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Do you treat hearing aid users?<span class="acc-icon" data-icon="plus"></span></button>
+            <div class="acc-body"><div class="acc-body-inner">Absolutely. Hearing aids increase wax build-up, and we regularly care for hearing aid users — including cleaning advice, dome checks and liaison with your audiologist.</div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Are your practitioners insured?<span class="acc-icon" data-icon="plus"></span></button>
+            <div class="acc-body"><div class="acc-body-inner">Every clinician carries full professional indemnity insurance (£5M cover) and is registered with their professional body — HCPC, GMC or NMC. Registration numbers are available on request.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-band-content">
+            <span class="badge badge--white" style="margin-bottom:18px;"><span class="dot"></span> Not Sure Which Service You Need?</span>
+            <h2>Book a consultation — we'll guide you</h2>
+            <p>Still unsure? Book any service and your specialist will recommend the safest, most effective option after examination. You only ever pay for what you need.</p>
+            <div class="cta-band-actions">
+              <a href="contact.html#book" class="btn btn--primary btn--lg">Book Now <span class="btn-arrow" data-icon="arrow"></span></a>
+              <a href="tel:+442071234567" class="btn btn--ghost-light btn--lg"><span data-icon="phone" style="width:18px;height:18px;display:inline-flex"></span> Ask Us First</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><span class="nav-logo-mark" data-icon="ear"></span><span>Auris Care<small>Ear Health Clinic</small></span></a>
+          <p>Premium mobile ear wax removal and micro-suction clinic. Registered specialists, hospital-grade sterility, and care that comes to you.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" data-icon="facebook"></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" data-icon="instagram"></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" data-icon="x"></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" data-icon="youtube"></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="home-2.html">Home 2</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="hearing-checks.html">Hearing Checks</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><span data-icon="pin"></span> 24 Harley Street, Marylebone, London W1G 9PY</li>
+            <li><span data-icon="phone"></span> <a href="tel:+442071234567">020 7123 4567</a></li>
+            <li><span data-icon="mail"></span> <a href="mailto:hello@auriscare.co.uk">hello@auriscare.co.uk</a></li>
+            <li><span data-icon="clock"></span> Mon–Sat · 8:00–19:00</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <p class="footer-news-text">Subscribe to receive the latest updates, news, offers and ear-health insights.</p>
+          <form class="footer-news-form" data-validate>
+            <label class="sr-only" for="nl-email">Email address</label>
+            <input id="nl-email" name="newsletter-email" type="email" placeholder="Your email address" aria-label="Email address" data-pattern="email" required>
+            <button class="btn btn--primary btn--sm btn--block" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Auris Care Ltd. All rights reserved.</span>
+        <div class="fb-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="fb-sep" aria-hidden="true">|</span>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+          <span class="fb-sep" aria-hidden="true">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" data-icon="arrowUp" aria-label="Back to top"></button>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('[data-icon]').forEach(el => {
+      const name = el.dataset.icon;
+      if (AURIS_ICONS[name]) el.innerHTML = AURIS_ICONS[name];
+    });
+  </script>
+</body>
+</html>

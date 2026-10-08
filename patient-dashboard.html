@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard — Auris Care</title>
+  <meta name="description" content="Auris Care patient portal — manage appointments, view treatment history, invoices and rebook treatments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24'%3E%3Crect width='24' height='24' rx='6' fill='%233FA7A3'/%3E%3Cpath d='M8 12a4 4 0 1 1 8 0c0 2-1 3-2 4s-1.5 2-1.5 3.5a1.5 1.5 0 0 1-3 0' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Auris Care home">
+        <span class="nav-logo-mark" data-icon="ear"></span>
+        <span class="nav-logo-text">Auris Care<small>Ear Health Clinic</small></span>
+      </a>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+        <button class="nav-dir-btn" data-dir-toggle aria-label="Toggle direction" title="RTL">RTL</button>
+        <div class="nav-profile">
+          <button class="nav-icon-btn nav-profile-btn" data-profile-toggle aria-label="Account" aria-haspopup="true" aria-expanded="false"><span data-icon="user"></span></button>
+          <div class="nav-profile-menu" role="menu">
+            <a href="login.html" role="menuitem">Login/Signup</a>
+            <a href="patient-dashboard.html" role="menuitem">Parent Dashboard</a>
+            <a href="admin-dashboard.html" role="menuitem">Admin Dashboard</a>
+          </div>
+        </div>
+        <button class="nav-burger" data-icon="menu" aria-label="Open menu"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="home-2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="hearing-checks.html">Hearing Checks</a>
+    <a href="treatment-process.html" class="mobile-sub">Treatment Process</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-divider" aria-hidden="true"></div>
+    <a href="login.html">Login/Signup</a>
+    <a href="patient-dashboard.html">Parent Dashboard</a>
+    <a href="admin-dashboard.html">Admin Dashboard</a>
+    <a href="contact.html#book" class="btn btn--primary">Book an Appointment</a>
+  </div>
+
+  <main id="main">
+    <div class="container">
+      <div class="dash">
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="dash-side reveal reveal--left">
+          <div class="dash-user">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Jane Smith">
+            <div><b>Jane Smith</b><span>Patient since 2024</span></div>
+          </div>
+          <nav class="dash-nav" data-dash-nav aria-label="Dashboard">
+            <button data-panel="overview" class="active"><span data-icon="chart"></span> Overview</button>
+            <button data-panel="appointments"><span data-icon="calendar"></span> Appointments <span class="dash-nav-badge">2</span></button>
+            <button data-panel="history"><span data-icon="doc"></span> Treatment History</button>
+            <button data-panel="invoices"><span data-icon="card"></span> Invoices</button>
+            <button data-panel="payments"><span data-icon="card"></span> Payments</button>
+            <button data-panel="notifications"><span data-icon="bell"></span> Notifications <span class="dash-nav-badge">3</span></button>
+            <button data-panel="profile"><span data-icon="settings"></span> Profile Settings</button>
+          </nav>
+          <div class="dash-logout">
+            <button data-panel="logout" style="display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:var(--r-sm); color:var(--danger); font-weight:600; font-size:0.9rem; width:100%;"><span data-icon="logout"></span> Sign Out</button>
+          </div>
+        </aside>
+
+        <!-- ============ PANELS ============ -->
+        <div class="dash-main">
+          <!-- OVERVIEW -->
+          <section class="dash-panel active" id="panel-overview">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Patient Portal</span><h2>Good morning, Jane</h2></div>
+              <a href="contact.html#book" class="btn btn--primary btn--sm">Quick Rebook <span class="btn-arrow" data-icon="arrow"></span></a>
+            </div>
+            <div class="dash-stats">
+              <div class="dash-stat"><span class="ds-icon" style="background:var(--ice); color:var(--teal-dark);" data-icon="calendar"></span><b>2</b><span>Upcoming visits</span></div>
+              <div class="dash-stat"><span class="ds-icon" style="background:var(--ice); color:var(--teal-dark);" data-icon="doc"></span><b>7</b><span>Total treatments</span></div>
+              <div class="dash-stat"><span class="ds-icon" style="background:var(--ice); color:var(--teal-dark);" data-icon="card"></span><b>£240</b><span>Outstanding</span></div>
+              <div class="dash-stat"><span class="ds-icon" style="background:var(--ice); color:var(--teal-dark);" data-icon="heart"></span><b>4.9</b><span>Your satisfaction</span></div>
+            </div>
+            <div class="dash-card">
+              <h3>Next Appointment</h3>
+              <div class="appt-item">
+                <div class="appt-date-badge"><b>12</b><span>Oct</span></div>
+                <div class="appt-info">
+                  <b>Micro-Suction Ear Wax Removal</b>
+                  <span><span data-icon="clock" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> 10:30 · Dr. Elena Marsh</span>
+                  <span><span data-icon="pin" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> Clinic · 24 Harley Street</span>
+                </div>
+                <span class="status-pill status-pill--confirmed">Confirmed</span>
+                <div class="appt-actions">
+                  <button class="mini-btn" data-reschedule>Reschedule</button>
+                  <button class="mini-btn mini-btn--danger" data-confirm-cancel>Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3>Your Practitioner</h3>
+              <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=200&q=80" alt="Dr. Elena Marsh" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--teal-soft);">
+                <div style="flex:1; min-width:140px;">
+                  <b style="display:block; font-size:1.05rem;">Dr. Elena Marsh</b>
+                  <span class="text-mute" style="font-size:0.85rem;">Clinical Audiologist · BSc MSc, HCPC</span>
+                  <div class="prac-rating" style="margin-top:6px;"><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span>4.9</span></div>
+                </div>
+                <a href="about.html" class="mini-btn">View Profile</a>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3>Quick Actions</h3>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a href="contact.html#book" class="mini-btn mini-btn--solid">Book New Visit</a>
+                <button class="mini-btn" data-reschedule>Reschedule Next</button>
+                <a href="hearing-checks.html" class="mini-btn">Hearing Check</a>
+                <a href="blog.html" class="mini-btn">Ear Care Articles</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- APPOINTMENTS -->
+          <section class="dash-panel" id="panel-appointments">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Your Schedule</span><h2>Appointments</h2></div>
+              <a href="contact.html#book" class="btn btn--primary btn--sm">New Appointment</a>
+            </div>
+            <div class="dash-card">
+              <h3>Upcoming</h3>
+              <div class="appt-item">
+                <div class="appt-date-badge"><b>12</b><span>Oct</span></div>
+                <div class="appt-info">
+                  <b>Micro-Suction Ear Wax Removal</b>
+                  <span><span data-icon="clock" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> 10:30 · Dr. Elena Marsh</span>
+                  <span><span data-icon="pin" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> Clinic · 24 Harley Street, London</span>
+                </div>
+                <span class="status-pill status-pill--confirmed">Confirmed</span>
+                <div class="appt-actions">
+                  <button class="mini-btn" data-reschedule>Reschedule</button>
+                  <button class="mini-btn mini-btn--danger" data-confirm-cancel>Cancel</button>
+                </div>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date-badge"><b>26</b><span>Oct</span></div>
+                <div class="appt-info">
+                  <b>Hearing Health Check</b>
+                  <span><span data-icon="clock" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> 14:15 · Sofia Lindqvist</span>
+                  <span><span data-icon="home" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> Home visit · Your address</span>
+                </div>
+                <span class="status-pill status-pill--pending">Pending</span>
+                <div class="appt-actions">
+                  <button class="mini-btn" data-reschedule>Reschedule</button>
+                  <button class="mini-btn mini-btn--danger" data-confirm-cancel>Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3>Past Appointments</h3>
+              <div class="appt-item" style="opacity:0.75;">
+                <div class="appt-date-badge"><b>14</b><span>Sep</span></div>
+                <div class="appt-info">
+                  <b>Micro-Suction Ear Wax Removal</b>
+                  <span><span data-icon="clock" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> 09:00 · James Okafor</span>
+                  <span><span data-icon="pin" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> Clinic · 24 Harley Street</span>
+                </div>
+                <span class="status-pill status-pill--completed">Completed</span>
+                <div class="appt-actions">
+                  <button class="mini-btn" data-modal-open="#rebookModal">Rebook</button>
+                </div>
+              </div>
+              <div class="appt-item" style="opacity:0.75;">
+                <div class="appt-date-badge"><b>02</b><span>Aug</span></div>
+                <div class="appt-info">
+                  <b>Ear Health MOT</b>
+                  <span><span data-icon="clock" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> 11:15 · Dr. Priya Raman</span>
+                  <span><span data-icon="pin" style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;"></span> Clinic · 24 Harley Street</span>
+                </div>
+                <span class="status-pill status-pill--completed">Completed</span>
+                <div class="appt-actions">
+                  <button class="mini-btn" data-modal-open="#rebookModal">Rebook</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- HISTORY -->
+          <section class="dash-panel" id="panel-history">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Your Record</span><h2>Treatment History</h2></div>
+            </div>
+            <div class="dash-card" style="padding:8px 26px;">
+              <div class="notif-item"><span class="n-icon" data-icon="check"></span><div><b>Micro-Suction — both ears cleared</b><p>14 Sep 2026 · James Okafor · Full clearance confirmed on camera</p></div><span class="n-time">14 Sep</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="sound"></span><div><b>Hearing screen — normal range</b><p>02 Aug 2026 · Dr. Priya Raman · All frequencies within healthy limits</p></div><span class="n-time">02 Aug</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="shield"></span><div><b>Ear Health MOT — all clear</b><p>02 Aug 2026 · Dr. Priya Raman · Wax, hearing and skin health all normal</p></div><span class="n-time">02 Aug</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="ear"></span><div><b>Micro-suction — right ear</b><p>18 Jun 2026 · Dr. Elena Marsh · Impacted wax removed, instant relief</p></div><span class="n-time">18 Jun</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="wave"></span><div><b>Tinnitus assessment — mild</b><p>21 May 2026 · Sofia Lindqvist · Management plan provided, sound therapy advised</p></div><span class="n-time">21 May</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="drop"></span><div><b>Irrigation — both ears</b><p>09 Apr 2026 · James Okafor · Soft wax flushed, canal verified clear</p></div><span class="n-time">09 Apr</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="ear"></span><div><b>Initial consultation &amp; micro-suction</b><p>12 Mar 2024 · Dr. Elena Marsh · First visit, baseline established</p></div><span class="n-time">12 Mar 24</span></div>
+            </div>
+          </section>
+
+          <!-- INVOICES -->
+          <section class="dash-panel" id="panel-invoices">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Billing</span><h2>Invoices</h2></div>
+            </div>
+            <div class="dash-card" style="padding:8px 26px;">
+              <div class="notif-item"><span class="n-icon" data-icon="doc"></span><div><b>INV-2026-0142 — Micro-Suction</b><p>14 Sep 2026 · £65.00 · Paid by card</p></div><span class="n-time"><button class="mini-btn">View</button></span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="doc"></span><div><b>INV-2026-0118 — Ear Health MOT</b><p>02 Aug 2026 · £110.00 · Paid by card</p></div><span class="n-time"><button class="mini-btn">View</button></span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="doc"></span><div><b>INV-2026-0097 — Tinnitus Assessment</b><p>21 May 2026 · £75.00 · Paid by card</p></div><span class="n-time"><button class="mini-btn">View</button></span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="doc"></span><div><b>INV-2026-0081 — Micro-Suction (Home)</b><p>18 Jun 2026 · £95.00 · Paid by card</p></div><span class="n-time"><button class="mini-btn">View</button></span></div>
+            </div>
+            <div class="dash-card">
+              <h3>Invoice Preview — INV-2026-0142</h3>
+              <div class="invoice">
+                <div class="invoice-head">
+                  <div class="inv-brand"><span class="nav-logo-mark" data-icon="ear" style="width:38px;height:38px;"></span> Auris Care</div>
+                  <div class="invoice-meta"><b>INV-2026-0118</b><br>Issued: 02 Aug 2026<br>Due: 02 Aug 2026<br>Status: <span style="color:var(--success); font-weight:700;">PAID</span></div>
+                </div>
+                <table class="invoice-table">
+                  <thead><tr><th>Description</th><th>Qty</th><th>Amount</th></tr></thead>
+                  <tbody>
+                    <tr><td>Ear Health MOT — complete check-up</td><td>1</td><td>£110.00</td></tr>
+                    <tr><td>Consultation &amp; otoscopic examination</td><td>1</td><td>Included</td></tr>
+                    <tr><td>Written aftercare plan &amp; report</td><td>1</td><td>Included</td></tr>
+                  </tbody>
+                </table>
+                <div class="invoice-total">
+                  <div class="it-box">
+                    <div class="it-row"><span>Subtotal</span><span>£110.00</span></div>
+                    <div class="it-row"><span>VAT</span><span>£0.00 (healthcare exempt)</span></div>
+                    <div class="it-row grand"><span>Total</span><b>£110.00</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PAYMENTS -->
+          <section class="dash-panel" id="panel-payments">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Billing</span><h2>Payment History</h2></div>
+            </div>
+            <div class="dash-card" style="padding:8px 26px;">
+              <div class="notif-item"><span class="n-icon" style="background:rgba(46,139,110,0.12); color:var(--success);" data-icon="check"></span><div><b>Payment successful — £65.00</b><p>14 Sep 2026 · Visa ending 4412 · INV-2026-0142</p></div><span class="n-time">14 Sep</span></div>
+              <div class="notif-item"><span class="n-icon" style="background:rgba(46,139,110,0.12); color:var(--success);" data-icon="check"></span><div><b>Payment successful — £110.00</b><p>02 Aug 2026 · Visa ending 4412 · INV-2026-0118</p></div><span class="n-time">02 Aug</span></div>
+              <div class="notif-item"><span class="n-icon" style="background:rgba(46,139,110,0.12); color:var(--success);" data-icon="check"></span><div><b>Payment successful — £75.00</b><p>21 May 2026 · Visa ending 4412 · INV-2026-0097</p></div><span class="n-time">21 May</span></div>
+              <div class="notif-item"><span class="n-icon" style="background:rgba(46,139,110,0.12); color:var(--success);" data-icon="check"></span><div><b>Payment successful — £95.00</b><p>18 Jun 2026 · Visa ending 4412 · INV-2026-0081</p></div><span class="n-time">18 Jun</span></div>
+            </div>
+            <div class="dash-card">
+              <h3>Payment Methods</h3>
+              <div class="appt-item" style="margin-bottom:0;">
+                <span class="icon-chip icon-chip--ice" data-icon="card"></span>
+                <div class="appt-info"><b>Visa ending 4412</b><span>Expires 09/28 · Default method</span></div>
+                <span class="status-pill status-pill--confirmed">Default</span>
+                <div class="appt-actions"><button class="mini-btn mini-btn--danger">Remove</button></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- NOTIFICATIONS -->
+          <section class="dash-panel" id="panel-notifications">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Stay Informed</span><h2>Notifications</h2></div>
+              <button class="mini-btn">Mark all read</button>
+            </div>
+            <div class="dash-card" style="padding:8px 26px;">
+              <div class="notif-item"><span class="n-icon" data-icon="calendar"></span><div><b>Appointment reminder</b><p>Your micro-suction with Dr. Marsh is on 12 Oct at 10:30, 24 Harley Street.</p></div><span class="n-time">2h ago</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="doc"></span><div><b>Invoice INV-2026-0118 paid</b><p>£110.00 for your Ear Health MOT. Receipt available in Invoices.</p></div><span class="n-time">02 Aug</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="bell"></span><div><b>Recall reminder</b><p>It has been 6 months since your last hearing screen. Time for your annual check?</p></div><span class="n-time">28 Jul</span></div>
+              <div class="notif-item"><span class="n-icon" data-icon="sparkle"></span><div><b>New article: Cotton buds — the truth</b><p>Our specialists explain why that daily habit is working against your ears.</p></div><span class="n-time">22 Jul</span></div>
+            </div>
+          </section>
+
+          <!-- PROFILE -->
+          <section class="dash-panel" id="panel-profile">
+            <div class="dash-panel-head">
+              <div><span class="eyebrow">Account</span><h2>Profile Settings</h2></div>
+            </div>
+            <div class="dash-card">
+              <h3>Personal Details</h3>
+              <form data-validate>
+                <div class="form-row">
+                  <div class="field"><label for="pf-fname">First name</label><input id="pf-fname" type="text" value="Jane" required></div>
+                  <div class="field"><label for="pf-lname">Last name</label><input id="pf-lname" type="text" value="Smith" required></div>
+                </div>
+                <div class="form-row">
+                  <div class="field"><label for="pf-email">Email</label><input id="pf-email" type="email" value="jane.smith@email.com" data-pattern="email" required></div>
+                  <div class="field"><label for="pf-phone">Phone</label><input id="pf-phone" type="tel" value="07123 456 789" data-pattern="phone" required></div>
+                </div>
+                <div class="field"><label for="pf-postcode">Postcode</label><input id="pf-postcode" type="text" value="W1G 9PY" required></div>
+                <div class="form-success">Profile updated successfully.</div>
+                <button type="submit" class="btn btn--primary">Save Changes</button>
+              </form>
+            </div>
+            <div class="dash-card">
+              <h3>Preferences</h3>
+              <div class="field" style="flex-direction:row; align-items:center; gap:12px;">
+                <input type="checkbox" id="pf-sms" checked style="width:auto;">
+                <label for="pf-sms" style="font-weight:400; color:var(--text-soft);">SMS appointment reminders</label>
+              </div>
+              <div class="field" style="flex-direction:row; align-items:center; gap:12px;">
+                <input type="checkbox" id="pf-email-n" checked style="width:auto;">
+                <label for="pf-email-n" style="font-weight:400; color:var(--text-soft);">Email newsletters &amp; ear care tips</label>
+              </div>
+              <div class="field" style="flex-direction:row; align-items:center; gap:12px;">
+                <input type="checkbox" id="pf-recall" checked style="width:auto;">
+                <label for="pf-recall" style="font-weight:400; color:var(--text-soft);">6-month recall reminders</label>
+              </div>
+            </div>
+            <div class="dash-card" style="border-color: rgba(192,87,79,0.3);">
+              <h3 style="color:var(--danger);">Danger Zone</h3>
+              <p class="text-mute" style="margin-bottom:16px; font-size:0.88rem;">Deleting your account removes all appointment history and invoices. This cannot be undone.</p>
+              <button class="mini-btn mini-btn--danger" data-confirm-cancel>Delete Account</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rebook modal -->
+  <div class="modal-overlay" id="rebookModal">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div style="padding:36px;">
+        <span class="eyebrow">Quick Rebook</span>
+            <h3 style="font-size:1.5rem; margin-bottom:8px;">Book your next visit</h3>
+            <p class="text-mute" style="margin-bottom:24px;">Choose a service and we'll show you the next available slots.</p>
+            <div class="opt-grid" style="margin-bottom:24px;">
+              <button class="opt-card selected" type="button"><b>Micro-Suction</b><small>From £65 · 30 min</small></button>
+              <button class="opt-card" type="button"><b>Hearing Check</b><small>From £45 · 45 min</small></button>
+              <button class="opt-card" type="button"><b>Ear Health MOT</b><small>From £110 · 60 min</small></button>
+              <button class="opt-card" type="button"><b>Home Visit</b><small>From £95 · 45 min</small></button>
+            </div>
+            <a href="contact.html#book" class="btn btn--primary btn--block">Continue to Booking <span class="btn-arrow" data-icon="arrow"></span></a>
+          </div>
+    </div>
+  </div>
+
+  <button class="to-top" data-icon="arrowUp" aria-label="Back to top"></button>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('[data-icon]').forEach(el => {
+      const name = el.dataset.icon;
+      if (AURIS_ICONS[name]) el.innerHTML = AURIS_ICONS[name];
+    });
+    document.querySelector('[data-panel="logout"]')?.addEventListener('click', () => {
+      Toast.show('Signed out', 'See you soon, Jane.', 'success');
+      setTimeout(() => location.href = 'login.html', 1200);
+    });
+    document.querySelectorAll('#rebookModal .opt-card').forEach(c => c.addEventListener('click', () => {
+      document.querySelectorAll('#rebookModal .opt-card').forEach(x => x.classList.remove('selected'));
+      c.classList.add('selected');
+    }));
+  </script>
+</body>
+</html>
