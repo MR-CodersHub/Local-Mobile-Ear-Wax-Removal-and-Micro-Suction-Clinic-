@@ -270,7 +270,7 @@ body.mobile-menu-open .nav-burger {
 .breadcrumb .sep { opacity: 0.5; }
 
 /* ---------- Service cards ---------- */
-.service-card { display: flex; flex-direction: column; gap: 18px; height: 100%; overflow: hidden; }
+.service-card { display: flex; flex-direction: column; gap: 0; height: 100%; overflow: hidden; }
 
 /* Image header (home) */
 .service-card .service-img { position: relative; flex-shrink: 0; margin: -32px -32px 0; aspect-ratio: 16/9; }
@@ -279,29 +279,38 @@ body.mobile-menu-open .nav-burger {
 .service-card:hover .service-img img { transform: scale(1.06); }
 .service-card:hover .service-img::after { transform: scale(1.06); }
 .service-card .service-img .service-icon {
-  position: absolute; bottom: -24px; inset-inline-start: 26px; z-index: 2;
+  position: absolute; bottom: -24px; inset-inline-start: 32px; z-index: 2;
   width: 58px; height: 58px; border-radius: var(--r-md);
   background: var(--bg-elev); border: 1px solid var(--border);
   box-shadow: var(--shadow-md); display: grid; place-items: center; color: var(--teal-dark);
   transition: background 0.35s, color 0.35s, transform 0.35s var(--ease);
 }
 .service-card:hover .service-img .service-icon { background: var(--teal); color: #fff; transform: rotate(-6deg) scale(1.05); }
-.service-card .service-body { display: flex; flex-direction: column; gap: 14px; flex: 1; padding-top: 40px; }
+.service-card .service-body { display: flex; flex-direction: column; gap: 16px; flex: 1; padding-top: 42px; }
 
 /* Icon (home-2 / services pages) */
 .service-card > .service-icon { width: 62px; height: 62px; border-radius: var(--r-md); background: var(--ice); display: grid; place-items: center; color: var(--teal-dark); transition: background 0.35s, color 0.35s, transform 0.35s var(--ease); }
 .service-card:hover > .service-icon { background: var(--teal); color: #fff; transform: rotate(-6deg) scale(1.05); }
 .service-icon svg { width: 30px; height: 30px; }
 
-.service-card h3 { font-size: var(--fs-h3); }
-.service-card p { color: var(--text-soft); font-size: 0.94rem; flex: 1; }
+.service-card h3 { font-size: var(--fs-h3); line-height: 1.35; margin: 0; }
+.service-card p { color: var(--text-soft); font-size: 0.94rem; line-height: 1.6; margin: 0; }
+.service-card .service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
 .service-card .service-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.88rem; color: var(--teal); }
 .service-link > [data-icon] { display: inline-flex; }
 .service-link svg { display: block; width: 16px; height: 16px; transition: transform 0.3s var(--ease); }
 .service-card:hover .service-link svg { transform: translateX(5px); }
 html[dir="rtl"] .service-card:hover .service-link svg { transform: translateX(-5px); }
-.service-card .service-price { font-size: 0.8rem; color: var(--text-mute); }
-.service-card .service-price b { color: var(--navy); font-size: 1rem; }
+.service-card .service-price { font-size: 0.85rem; color: var(--text-mute); }
+.service-card .service-price b { color: var(--navy); font-size: 1.05rem; }
 [data-theme="dark"] .service-card .service-price b { color: var(--text); }
 
 /* ---------- Practitioner cards — clean editorial, zero overlap ---------- */
