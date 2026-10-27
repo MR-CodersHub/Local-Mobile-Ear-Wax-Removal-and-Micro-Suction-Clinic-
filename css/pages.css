@@ -126,12 +126,14 @@ html[dir="rtl"] .why-media .why-float { inset-inline-end: auto; inset-inline-sta
 @media (max-width: 520px) { .process-strip { grid-template-columns: 1fr; } }
 
 /* ---------- Home: CTA band ---------- */
-.cta-band { position: relative; border-radius: var(--r-xl); overflow: hidden; padding: 70px 60px; background: linear-gradient(120deg, var(--navy) 0%, var(--navy-3) 60%, var(--teal-dark) 130%); color: #fff; }
+.cta-band { position: relative; border-radius: var(--r-xl); overflow: hidden; padding: 70px 60px; background: linear-gradient(120deg, var(--navy) 0%, var(--navy-3) 60%, var(--teal-dark) 130%); color: #fff; text-align: center; }
 .cta-band::before { content: ""; position: absolute; width: 380px; height: 380px; border-radius: 50%; border: 60px solid rgba(63,167,163,0.14); top: -190px; inset-inline-end: -100px; }
-.cta-band-content { position: relative; z-index: 2; max-width: 560px; }
-.cta-band h2 { color: #fff; font-size: var(--fs-h2); margin-bottom: 14px; }
-.cta-band p { color: rgba(234,243,246,0.78); margin-bottom: 30px; }
-.cta-band-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.cta-band::after { content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%; border: 50px solid rgba(255,255,255,0.04); bottom: -170px; inset-inline-start: -80px; pointer-events: none; }
+.cta-band-content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; text-align: center; }
+.cta-band-content .badge { margin-inline: auto; }
+.cta-band h2 { color: #fff; font-size: var(--fs-h2); margin-bottom: 14px; text-align: center; }
+.cta-band p { color: rgba(234,243,246,0.78); margin-bottom: 30px; max-width: 580px; margin-inline: auto; text-align: center; }
+.cta-band-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center; }
 @media (max-width: 640px) { .cta-band { padding: 48px 28px; } }
 
 /* ---------- About: values ---------- */

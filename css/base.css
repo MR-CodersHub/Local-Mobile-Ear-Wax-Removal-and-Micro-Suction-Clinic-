@@ -178,6 +178,9 @@ html[dir="rtl"] .btn:hover .btn-arrow { transform: translateX(-4px); }
 .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
 .badge [data-icon] { display: inline-flex; }
 .badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+[data-theme="dark"] .badge { background: rgba(63, 167, 163, 0.16); color: var(--text); border: 1px solid rgba(63, 167, 163, 0.25); }
+[data-theme="dark"] .badge--teal { background: rgba(63, 167, 163, 0.22); color: var(--teal-soft); border: 1px solid rgba(63, 167, 163, 0.35); }
+[data-theme="dark"] .badge--sand { background: rgba(201, 188, 168, 0.18); color: #F4ECE1; border: 1px solid rgba(201, 188, 168, 0.3); }
 
 /* ---------- Cards ---------- */
 .card {
@@ -203,6 +206,19 @@ html[dir="rtl"] .btn:hover .btn-arrow { transform: translateX(-4px); }
 .icon-chip svg { width: 26px; height: 26px; }
 .icon-chip--ice { background: var(--ice); color: var(--navy); box-shadow: none; }
 .icon-chip--sand { background: var(--sand); color: var(--navy); box-shadow: none; }
+
+[data-theme="dark"] .icon-chip--ice {
+  background: rgba(63, 167, 163, 0.20);
+  color: var(--teal-soft);
+  border: 1px solid rgba(127, 199, 196, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+[data-theme="dark"] .icon-chip--sand {
+  background: rgba(201, 188, 168, 0.18);
+  color: #F4ECE1;
+  border: 1px solid rgba(201, 188, 168, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
 
 /* ---------- Forms ---------- */
 .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }

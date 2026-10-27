@@ -662,6 +662,7 @@ html[dir="rtl"] .split-media .split-badge { inset-inline-start: auto; inset-inli
 .check-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
 .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; }
 .check-list svg { width: 20px; height: 20px; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+[data-theme="dark"] .check-list svg { color: var(--teal-soft); }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 44px; } .split-media .split-badge { inset-inline-start: 12px; } }
 
 /* ---------- Trust bar ---------- */
