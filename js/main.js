@@ -713,6 +713,48 @@ const Countdown = {
 /* ---------- Dashboard ---------- */
 const Dashboard = {
   init() {
+    const dashBurger = document.querySelector('[data-dash-burger]');
+    const dashSide = document.querySelector('.dash-side');
+    const dashBackdrop = document.querySelector('[data-dash-backdrop]');
+    const dashClose = document.querySelector('[data-dash-close]');
+
+    if (dashBurger && dashSide) {
+      const openDrawer = () => {
+        document.body.classList.add('dash-open');
+        dashBurger.setAttribute('aria-expanded', 'true');
+      };
+      const closeDrawer = () => {
+        document.body.classList.remove('dash-open');
+        dashBurger.setAttribute('aria-expanded', 'false');
+      };
+
+      dashBurger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (document.body.classList.contains('dash-open')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+
+      dashClose?.addEventListener('click', closeDrawer);
+      dashBackdrop?.addEventListener('click', closeDrawer);
+
+      // Close drawer with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('dash-open')) {
+          closeDrawer();
+        }
+      });
+
+      // Close drawer if window is resized beyond 992px
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 992 && document.body.classList.contains('dash-open')) {
+          closeDrawer();
+        }
+      });
+    }
+
     document.querySelectorAll('[data-dash-nav]').forEach(nav => {
       nav.querySelectorAll('button[data-panel]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -722,6 +764,12 @@ const Dashboard = {
           dash.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
           const panel = dash.querySelector(`#panel-${btn.dataset.panel}`);
           if (panel) panel.classList.add('active');
+
+          // Auto-close sidebar drawer on tablet / mobile after selecting a panel
+          if (window.innerWidth <= 992 && document.body.classList.contains('dash-open')) {
+            document.body.classList.remove('dash-open');
+            dashBurger?.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     });
